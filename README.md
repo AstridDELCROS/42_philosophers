@@ -2,7 +2,6 @@
 
 *Summary: In this project, you will learn the basics of threading a process and how to work on the same memory space. You will learn how to make threads. You will discover the mutex, semaphore and shared memory.*
 
-
 **Mandatory part**
 
 You will have to write 3 different programs but they will have the same basic rules:
@@ -28,13 +27,13 @@ You will have to write 3 different programs but they will have the same basic ru
 - number\_of\_times\_each\_philosopher\_must\_eat: argument is optional, if all philosophers eat at least ’number\_of\_times\_each\_philosopher\_must\_eat’ the simulation will stop. If not specified, the simulation will stop only at the death of a philosopher.
 - Each philosopher should be given a number from 1 to ’number\_of\_philosophers’.
 - Philosopher number 1 is next to philosopher number ’number\_of\_philosophers’. Any other philosopher with number N is seated between philosopher N - 1 and philosopher N + 1
-- Any change of status of a philosopher must be written as follows (with X replaced with the philosopher number and timestamp\_in\_ms the current timestamp in mil- liseconds)
+- Any change of status of a philosopher must be written as follows (with X replaced with the philosopher number and timestamp\_in\_ms the current timestamp in milliseconds)
 - timestamp\_in\_ms X has taken a fork
 - timestamp\_in\_ms X is eating
 - timestamp\_in\_ms X is sleeping
 - timestamp\_in\_ms X is thinking
 - timestamp\_in\_ms X died
-- The status printed should not be scrambled or intertwined with another philoso- pher’s status.
+- The status printed should not be scrambled or intertwined with another philosopher’s status.
 - You can’t have more than 10 ms between the death of a philosopher and when it will print its death.
 - Again, philosophers should avoid to die!
 
@@ -46,6 +45,7 @@ You will have to write 3 different programs but they will have the same basic ru
 |**External functs.**|<p>memset, printf, malloc, free, write,</p><p>usleep, gettimeofday, pthread\_create, pthread\_detach, pthread\_join, pthread\_mutex\_init, pthread\_mutex\_destroy, pthread\_mutex\_lock, pthread\_mutex\_unlock</p>|
 |**Libft authorized**|No|
 |**Description**|philosopher with threads and mutex|
+
 In this version the non common rules will be:
 
 - One fork between each philosopher, therefore there will be a fork at the right and at the left of each philosopher.
@@ -60,6 +60,7 @@ In this version the non common rules will be:
 |**External functs.**|memset, printf, malloc, free, write, usleep, gettimeofday, pthread\_create, pthread\_detach, pthread\_join, sem\_open, sem\_close, sem\_post, sem\_wait, sem\_unlink|
 |**Libft authorized**|No|
 |**Description**|philosopher with threads and semaphore|
+
 In this version the non common rules will be:
 
 - All the forks are in the middle of the table.
@@ -74,8 +75,9 @@ In this version the non common rules will be:
 |**External functs.**|memset, printf, malloc, free, write, fork, kill, exit, pthread\_create, pthread\_detach, pthread\_join, usleep, gettimeofday, waitpid, sem\_open, sem\_close, sem\_post, sem\_wait, sem\_unlink|
 |**Libft authorized**|No|
 |**Description**|philosopher with processes and semaphore|
+
 In this version the non common rules will be:
 
 - All the forks are in the middle of the table.
 - They have no states in memory but the number of available forks is represented by a semaphore.
-- Each philosopher should be a process and the main process should not be a philoso- pher.
+- Each philosopher should be a process and the main process should not be a philosopher.
